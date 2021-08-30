@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stories Player</title>
+    <meta name="description" content="360&deg; Image - A-Frame">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio id="trial" src="assets/trial.m4a"></audio>
+        <img id="p-one" src="img/person-one.jpg">
+        <img id="p-two" src="img/person-two.jpg">
+        <img id="p-three" src="img/person-three.jpg">
+        <img id="circle" src="img/this-try.jpg">
+
+        <script id="plane" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1.3; width: 1.3"
+            material="shader: flat; src: ${thumb}" sound="on: click; src: #trial">
+          </a-entity>
+        </script>
+      </a-assets>
+
+      <a-sky id="image-360" src="#circle" radius="20" rotation="0 -100 -0"></a-sky>
+
+      <a-entity id="links" position="0 .5 -3">
+        <a-entity template="src: #plane" data-thumb="#p-one" position="0 0 0" rotation="0 0 0"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#p-two" position="4 0 .5" rotation="0 -25 0"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#p-three" position="8 0 4" rotation="0 -65 0"></a-entity>
+      </a-entity>
+
+      <a-camera>
+        <a-cursor id="cursor" animation__click="property: scale; from: 1 1 1; to: 1.5 1.5 1.5; easing: easeInCubic; dur: 150; startEvents: click" animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click" animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+      </a-camera>
+
+    </a-scene>
+  </body>
+</html>
