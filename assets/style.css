@@ -52,6 +52,11 @@ p {line-height: 1.6;}
   color: var(--prime);
   border-color: var(--prime);
 }
+.btn-fill > svg, .btn-hollow > svg {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
 .back_to_top {
   position: fixed;
   bottom: 80px;
@@ -95,7 +100,7 @@ p {line-height: 1.6;}
   display: inline-block;
   position: relative;
   top: -2px;
-  left: 4px;
+  left: 8px;
 }
 .nav-items {
   padding-top: 9px;
@@ -122,7 +127,7 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   left: 0;
   background-image: url(../bin-img/otop.png);
   background-repeat: no-repeat;
-  background-position: 88%;
+  background-position: 88% -30px;
   background-size: contain;
   animation: tree 6s ease 0s infinite alternate backwards;
 }
@@ -159,7 +164,15 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
 }
 .spl-txt {
   color: var(--prime);
-  font-size: 125%;
+  text-align: center;
+}
+.spl-txt h1 {
+  font-size: 2.4rem;
+}
+.spl-txt h2 {
+  font-size: 1.4rem;
+  opacity: .7;
+  margin-bottom: 1rem;
 }
 .store-links {
   width: 60%;
