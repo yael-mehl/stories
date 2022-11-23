@@ -328,6 +328,7 @@ footer {
   margin: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
 }
 #fs-frm label,
 #fs-frm legend,
