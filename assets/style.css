@@ -57,30 +57,6 @@ p {line-height: 1.6;}
   top: 5px;
   left: 5px;
 }
-.back_to_top {
-  position: fixed;
-  bottom: 80px;
-  right: 40px;
-  z-index: 9999;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  line-height: 60px;
-  background: var(--prime);
-  color: var(--white);
-  cursor: pointer;
-  border: 2px solid transparent;
-  display: none;
-  transition: var(--standard);
-}
-.back_to_top:hover {
-  background: var(--white);
-  border: 2px solid var(--prime);
-  color: var(--prime);
-}
-.back_to_top-show {
-  display: block;
-}
 /*--Navigation--*/
 .main-nav {background: var(--prime);line-height: 1.1;}
 .nav-wrap {
