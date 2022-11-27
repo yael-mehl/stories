@@ -1,14 +1,14 @@
 /*--defaults--*/
-:root {font-size: 20px;line-height: 1.4;font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";--black: #282828;--drk-gray: ;--prime:#2A106C;--md-prime:#846EBD;--lt-prime:#E4DFF3;--gray:#605C6D;--lt-gray:#C5C2CC;--white:#FAFAFA;--standard: all .3s ease-in-out;}
+:root {font-size: 20px;line-height: 1.4;font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";--black: #282828;--drk-gray: ;--prime:#2A106C;--md-prime:#705aa8;--lt-prime:#E4DFF3;--gray:#605C6D;--lt-gray:#C5C2CC;--white:#FAFAFA;--standard: all .2s ease-in-out;--sm-shadow:0px 0px 3px rgba(25, 0, 50, 0.2);--lg-shadow:0px 0px 8px rgba(25, 0, 50, 0.15);}
 *, *::before, *::after {box-sizing: border-box;}
-html, body, article, header, nav, main, article, aside, section, div, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, figcaption, img, footer {margin: 0; padding: 0;}
-a:link {color: var(--prime); transition: var(--standard); cursor: pointer; text-decoration: none;}
-a:visited {color: var(--prime);}
-a:hover {color: var(--md-prime);}
-a:active{color: var(--md-prime);}
+html, body, article, header, nav, main, article, aside, section, div, h1, h2, h3, h4, h5, h6, p, ul, ol, audio, video, iframe, figure, figcaption, img, footer {margin: 0; padding: 0;}
+a:link {color: var(--md-prime); transition: var(--standard); cursor: pointer; text-decoration: none;}
+a:visited {color: var(--md-prime);}
+a:hover {color: var(--prime);}
+a:active{color: var(--prime);}
 /*--doc styles--*/
 html{scroll-behavior: smooth;}
-body {background-color: var(--lt-gr);color: var(--black);}
+body {background-color: var(--white);color: var(--black);}
 h1, h2, h3, h4, h5, h6, .serif {font-family: 'EB Garamond', serif;}
 .subtext {font-style: italic;font-size: 85%;}
 section:not(#splash) {padding: 3rem 5vw;}
@@ -57,6 +57,7 @@ p {line-height: 1.6;}
   top: 5px;
   left: 5px;
 }
+
 /*--Navigation--*/
 .main-nav {background: var(--prime);line-height: 1.1;}
 .nav-wrap {
@@ -191,44 +192,82 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   color: var(--prime);
 }
 #voices > p {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 .voices-wrap {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  align-items: start;
 }
 .voice-card {
+  position:relative;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  line-height: 1.1;
-}
-.voice-card img {
-  transition: var(--standard);
-}
-.voice-card:hover img {
-  opacity: .85;
-}
-.voice-card header {
-  margin-left: 1rem;
   flex-direction: column;
-  justify-content: space-around;
+  text-align: left;
+  cursor: pointer;
+  padding: .5rem .5rem .6rem .5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--prime);
+  transition: var(--standard);
+  border: 2px dashed var(--lt-prime);
+}
+.voice-card:hover {
+  border: 2px dashed var(--prime);
+}
+.voice-card.expanded {
+  background-color: var(--lt-prime);
+  border: 2px solid var(--md-prime);
+}
+audio {
+  width: 100%;
+  margin: .75rem 0 .25rem 0;
+}
+.voice-card figcaption {
+  text-align: right;
+  position: relative;
+}
+figcaption svg {
+  position: relative;
+  top: 4px;
 }
 .voice-card h4 {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
-.voice-card > header > span {
-  text-transform: uppercase;
-  opacity: .7;
-  font-size: 90%;
+.voice-card h5 {
+  margin-top: 1rem;
+  font-size: 1.45em;
+  margin-bottom: .25rem;
 }
-.voice-card p {
-  margin-top: .25em;
+.voice-card p, .voice-card figcaption {
+  font-size: 1.25em;
+  color: var(--black);
+  margin: 0 0 .5rem 0;
 }
-.voice-card:hover p {
-  text-decoration: underline;
+.voice-card h4:after {
+  content:'\002B';
+  color: var(--md-prime);
+  position: absolute; 
+  top: 0rem;
+  right: .75rem;
+  font-size: 1.6em;
+}
+.voice-card:hover h4::after {
+  color: var(--prime);
+}
+h4.opened:after {
+  content:'\2212'; 
+}
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+}
+.collapse.show {
+  max-height: 99em;
+  transition: max-height .5s ease-in-out;
 }
 /*--Resources Section --*/
 #resources {
@@ -248,10 +287,57 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
 .resources-wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
+  grid-gap: 2rem;
 }
 .resources-card {
   cursor: pointer;
+}
+.resources-card h4 {
+  font-size: 1.15em;
+  color: var(--prime);
+}
+.resources-card span {
+  color: var(--black);
+}
+.resources-card:hover h4 {
+  color: var(--md-prime);
+}
+.resources-card:hover span {
+  color: var(--prime);
+}
+/*--Pedagogy Section --*/
+#pedagogy h2 {
+  color: var(--prime);
+}
+.pedagogy-wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 0 2rem;
+}
+#pedagogy .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10rem;
+}
+#pedagogy h3 {
+  color: var(--prime);
+}
+#pedagogy > p {
+  margin-bottom: 2rem;
+}
+#pedagogy .picture {
+  padding: 0 5rem;
+  margin-top: 0;
+}
+#pedagogy figcaption {
+  font-size: .85em;
+  margin-top: .25rem;
+  color: var(--prime);
+}
+#pedagogy img {
+  width: 100%;
+  height: auto;
 }
 /*--Credits Section --*/
 #credits h2 {
@@ -410,8 +496,8 @@ footer {
   grid-template-columns: 1fr 1fr;
 }
 /*--Media Queries--*/
-@media screen and (max-width: 1280px) {
-  .voices-wrap {grid-template-columns: repeat(3, 1fr);grid-gap: 2em;}
+@media screen and (max-width: 1080px) {
+  .voices-wrap {grid-template-columns: repeat(2, 1fr);grid-gap: 2em;}
 }
 @media screen and (max-width: 990px) {
   :root{font-size: 18px;}
@@ -422,7 +508,7 @@ footer {
 }
 @media screen and (max-width: 768px) {
   .nav-wrap{flex-direction:column;align-items: center;}
-  .voices-wrap {grid-template-columns: repeat(2, 1fr);}
+  .voices-wrap {grid-template-columns: 1fr;}
 }
 @media screen and (max-width: 550px) {
   :root{font-size: 16px;}
