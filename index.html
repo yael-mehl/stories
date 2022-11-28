@@ -423,7 +423,7 @@
       </div>
     </section>
     <section id="credits">
-      <h2>Credits <span class="subtext">and</span> Acknowledgement</h2>
+      <h2>Credits <span class="subtext">and</span> Acknowledgements</h2>
       <div class="credits-txt">
         <p>As faculty of our institutional community whose homes and offices are in a geophysical location, we wish to thank all the generations of people who have taken care of this land before us. We acknowledge we live and work on the traditional territory of the Akwesasne Mohawk and their ancestors. These lands and waterways connect to the vast traditional areas of the Haudenosaunee, Algonquin, Huron-Wendat, and Abenaki Peoples.</p>
         <p>We recognize and deeply appreciate their connection to this place. These traditional territories were never wholly surrendered and were only claimed by competing French and British Crowns, and later New York State.</p>
@@ -459,17 +459,6 @@
         </span>
       </div>
     </footer>
-    <script>
-      let el = document.getElementsByClassName("voice-card");
-      let i;
-      for (i = 0; i < el.length; i++) {
-        el[i].addEventListener("click", function() {
-          let tog = this.childNodes[1].classList.toggle("opened")
-          let content = this.childNodes[1].nextElementSibling;
-          content.classList.toggle("show");
-          this.classList.toggle("expanded");
-        });
-      }
-  </script>
+    <script src="assets/page.js"></script>
   </body>
 </html>
