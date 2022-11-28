@@ -379,7 +379,6 @@ footer {
   background-color: var(--prime);
   color: var(--lt-prime);
   width: 100%;
-  font-size: .85em;
   position: relative;
 }
 footer svg {
