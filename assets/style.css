@@ -379,7 +379,7 @@ footer {
   background-color: var(--prime);
   color: var(--lt-prime);
   width: 100%;
-  font-size: .8em;
+  font-size: .85em;
   position: relative;
 }
 footer svg {
@@ -398,6 +398,15 @@ footer svg {
   margin-right: 2em;
 }
 /* form styles */
+#contact .btn-fill {
+  position: relative;
+  font-size: 1rem;
+}
+#contact .btn-fill > svg {
+  top: 0px;
+  left: 10px;
+  font-size: 1rem;
+}
 #fs-frm input,
 #fs-frm select,
 #fs-frm textarea,
@@ -421,7 +430,6 @@ footer svg {
 #fs-frm label,
 #fs-frm legend,
 #fs-frm ::placeholder {
-  font-size: .825rem;
   margin-bottom: .5rem;
   padding-top: .2rem;
   display: flex;
