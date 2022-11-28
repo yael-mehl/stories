@@ -315,10 +315,14 @@ h4.opened:after {
   grid-gap: 0 2rem;
 }
 #pedagogy .content {
+  max-width: 650px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 10rem;
+}
+#pedagogy .btn-fill {
+  margin-top: 2rem;
 }
 #pedagogy h3 {
   color: var(--prime);
@@ -327,8 +331,8 @@ h4.opened:after {
   margin-bottom: 2rem;
 }
 #pedagogy .picture {
-  padding: 0 5rem;
-  margin-top: 0;
+  max-width: 350px;
+  margin: 0 auto;
 }
 #pedagogy figcaption {
   font-size: .85em;
@@ -340,8 +344,17 @@ h4.opened:after {
   height: auto;
 }
 /*--Credits Section --*/
-#credits h2 {
-  color: var(--prime);
+#credits {
+  background-color: var(--prime);
+  color: var(--white);
+  /* border: 1px solid var(--prime);
+  outline: 2px dashed var(--lt-prime);
+  outline-offset: -1em; */
+}
+.credits-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
 }
 #credits > p {
   margin-bottom: 2rem;
@@ -361,11 +374,22 @@ footer {
   background-color: var(--prime);
   color: var(--lt-prime);
   width: 100%;
+  font-size: .8em;
+  position: relative;
+}
+footer svg {
+  width: 18px;
+  position: relative;
+  top: 7px;
+}
+footer a:link, footer a:visited {
+  color: var(--lt-prime);
 }
 .foot-wrap {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 1.1rem 2vw .9rem 2vw;
 }
 .foot-link:not(:last-of-type) {
@@ -498,17 +522,23 @@ footer {
 /*--Media Queries--*/
 @media screen and (max-width: 1080px) {
   .voices-wrap {grid-template-columns: repeat(2, 1fr);grid-gap: 2em;}
+  .credits-wrap {grid-template-columns: repeat(2, 1fr);}
 }
 @media screen and (max-width: 990px) {
   :root{font-size: 18px;}
   section:not(#splash) {padding: 2rem 3vw;}
   .hist-txt {column-gap: 2em;}
   .resources-wrap {grid-template-columns: repeat(2, 1fr);}
+  .credits-wrap {grid-template-columns: repeat(2, 1fr);}
   .store-links {flex-direction: column;}
 }
 @media screen and (max-width: 768px) {
   .nav-wrap{flex-direction:column;align-items: center;}
   .voices-wrap {grid-template-columns: 1fr;}
+  .credits-wrap {grid-template-columns: 1fr;}
+  .pedagogy-wrap {grid-template-columns: 1fr; grid-gap: 2rem;}
+  #pedagogy .picture {order: -1;}
+
 }
 @media screen and (max-width: 550px) {
   :root{font-size: 16px;}
@@ -520,4 +550,5 @@ footer {
   .hist-txt {column-count: 1;}
   .voices-wrap {grid-template-columns: 1fr;}
   .resources-wrap {grid-template-columns: 1fr;}
+  .credits-wrap {grid-template-columns: 1fr;}
 }
