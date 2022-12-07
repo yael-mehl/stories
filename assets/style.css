@@ -158,12 +158,12 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   justify-content: space-evenly;
 }
 .store-link img {
-  opacity: 1;
-  cursor: pointer;
+  opacity: .5;
+  cursor: not-allowed;
   transition: var(--standard);
 }
 .store-link img:hover {
-  opacity: .8;
+  opacity: .5;
 }
 /*-History Section-*/
 #history {
