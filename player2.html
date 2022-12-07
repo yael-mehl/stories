@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stories Player</title>
+    <meta name="description" content="360&deg; Image - A-Frame">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio id="a-phil" src="assets/audio/a-phil.m4a" preload="auto"></audio>
+        <audio id="a-sandy" src="assets/audio/a-sandy.m4a" preload="auto"></audio>
+        <img id="bob" src="img/names/bob.png">
+        <img id="phil" src="img/names/phil.png">
+        <img id="sandra" src="img/names/sandra.png">
+        <img id="sophia" src="img/names/sophia.png">
+        <img id="sue" src="img/names/sue.png">
+        <!-- <img id="circle" src="img/this-try.jpg"> -->
+        <img id="circle" src="img/edit.png">
+
+        <script id="p-phil" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1.3; width: 4;"
+            material="shader: phong; transparent: true; src: ${thumb}" 
+            sound="on: click; src: #a-phil">
+          </a-entity>
+        </script>
+        <script id="p-sandy" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1.3; width: 4;"
+            material="shader: phong; transparent: true; src: ${thumb}" 
+            sound="on: click; src: #a-sandy">
+          </a-entity>
+        </script>
+        <script id="plane" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1.3; width: 4;"
+            material="shader: phong; transparent: true; src: ${thumb}" 
+            sound="on: click; src: #a-phil">
+          </a-entity>
+        </script>
+      </a-assets>
+
+      <a-sky id="image-360" src="#circle" radius="20" rotation="0 -100 10"></a-sky>
+
+      <a-entity id="links" position="0 1.5 -8">
+        <a-entity template="src: #plane" data-thumb="#bob" position="-16 0 4" rotation="0 65 0"></a-entity>
+        <a-entity template="src: #p-phil" data-thumb="#phil" position="-8 0 .5" rotation="0 25 0"></a-entity>
+        <a-entity template="src: #p-sandy" data-thumb="#sandra" position="0 0 0" rotation="0 0 0"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#sophia" position="8 0 .5" rotation="0 -25 0"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#sue" position="16 0 4" rotation="0 -65 0"></a-entity>
+      </a-entity>
+
+      <a-camera>
+        <a-cursor id="cursor" animation__click="property: scale; from: 1 1 1; to: 1.5 1.5 1.5; easing: easeInCubic; dur: 150; startEvents: click" animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click" animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+      </a-camera>
+
+    </a-scene>
+  </body>
+</html>
