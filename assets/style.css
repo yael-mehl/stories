@@ -19,7 +19,7 @@ p {line-height: 1.6;}
   background-color: var(--prime);
   color: var(--white);
   border: 2px solid transparent;
-  padding: .4em 1em;
+  padding: .4em 1em .5em 1em;
   min-width: 230px;
   width: 16vw;
   margin: 1em auto;
@@ -38,7 +38,7 @@ p {line-height: 1.6;}
   background-color: transparent;
   color: var(--white);
   border: 2px solid var(--white);
-  padding: .4em 1em;
+  padding: .4em 1em .5em 1em;
   min-width: 230px;
   width: 16vw;
   margin: 1em auto;
@@ -51,6 +51,16 @@ p {line-height: 1.6;}
   background-color: var(--white);
   color: var(--prime);
   border-color: var(--prime);
+}
+.btn-fill:link.btn-splash:link, .btn-fill:visited.btn-splash:visited {
+  background: transparent;
+  border: 2px solid var(--prime);
+  color: var(--prime);
+}
+.btn-fill:hover.btn-splash:hover {
+  border: 2px solid var(--prime);
+  color: var(--white);
+  background: var(--prime);
 }
 .btn-fill > svg, .btn-hollow > svg {
   position: relative;
@@ -82,7 +92,7 @@ p {line-height: 1.6;}
   padding-top: 9px;
 }
 .nav-items > a:not(:first-child) {
-  margin-left: 2vw;
+  margin-left: 1.5vw;
 }
 a.nav-link:link, a.foot-link:link {color: var(--lt-prime);}
 a.nav-link:visited, a.foot-link:visited {color: var(--lt-prime);}
@@ -158,11 +168,17 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   justify-content: space-evenly;
 }
 .store-link img {
-  opacity: .5;
-  cursor: not-allowed;
+  opacity: 1;
   transition: var(--standard);
 }
 .store-link img:hover {
+  opacity: .7;
+}
+.store-link.disabled img {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.store-link.disabled img:hover {
   opacity: .5;
 }
 /*-History Section-*/
@@ -534,26 +550,26 @@ footer svg {
 }
 @media screen and (max-width: 990px) {
   :root{font-size: 18px;}
+  .nav-wrap{flex-direction:column;align-items: center;}
   section:not(#splash) {padding: 2rem 3vw;}
   .hist-txt {column-gap: 2em;}
   .resources-wrap {grid-template-columns: repeat(2, 1fr);}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
 }
 @media screen and (max-width: 768px) {
-  .nav-wrap{flex-direction:column;align-items: center;}
   .voices-wrap {grid-template-columns: 1fr;}
   .credits-wrap {grid-template-columns: 1fr;}
   .pedagogy-wrap {grid-template-columns: 1fr; grid-gap: 2rem;}
   #pedagogy .picture {order: -1;}
+  #history, #resources, #credits {outline-offset: -.2em;}
+  .hist-txt, .credits-txt {column-count: 1;}
 }
 @media screen and (max-width: 550px) {
   :root{font-size: 16px;}
-  section:not(#splash) {padding: 1rem 1vw;}
+  section:not(#splash) {padding: 1rem 2vw; outline: none;}
   #splash{background-position: 96%;}
-  #history, #resources {outline-offset: -.2em;}
   .spl-wrap {margin-left: 0%; width: 100%; background-color: rgba(255,255,255,0.8);}
-  .spl-txt{font-size:125%;}
-  .hist-txt {column-count: 1;}
+  .spl-txt{font-size:115%;}
   .voices-wrap {grid-template-columns: 1fr;}
   .resources-wrap {grid-template-columns: 1fr;}
   .credits-wrap {grid-template-columns: 1fr;}
