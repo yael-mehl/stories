@@ -1,44 +1,315 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
+    <title>Stories from the Circle | WebVR</title>
     <meta charset="utf-8">
-    <title>Stories Player</title>
-    <meta name="description" content="360&deg; Image - A-Frame">
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- a-frame JS -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
-  </head>
+    <!-- our JS -->
+    <script src="assets/script.js" defer></script>
+  </head>  
   <body>
-    <a-scene>
-      <a-assets>
-        <audio id="trial" src="assets/trial.m4a"></audio>
-        <img id="p-one" src="bin-img/person-one.jpg">
-        <img id="p-two" src="bin-img/person-two.jpg">
-        <img id="p-three" src="bin-img/person-three.jpg">
-        <img id="circle" src="bin-img/this-try.jpg">
+    <h1 class="page-title">Stories From the Circle Web VR App</h1>
+  <a-scene cursor='rayOrigin: mouse' raycaster='objects: [sound]'>
+    <a-assets>
+      
+      <audio id="audio-phil" src="audio/arnold.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-phil" src="bin-img/names/phil.png">
+        
+      <audio id="audio-sue" src="audio/eiholzer.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-sue" src="bin-img/names/sue.png">
 
-        <script id="plane" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: plane; height: 1.3; width: 1.3"
-            material="shader: flat; src: ${thumb}" sound="on: click; src: #trial">
-          </a-entity>
-        </script>
-      </a-assets>
+      <audio id="audio-hillary" src="audio/coppola.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-hillary" src="bin-img/names/hillary-anne.png">
 
-      <a-sky id="image-360" src="#circle" radius="20" rotation="0 -100 -0"></a-sky>
+      <audio id="audio-cecelia" src="audio/ilacqua.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-cecelia" src="bin-img/names/cecelia.png">
 
-      <a-entity id="links" position="0 .5 -3">
-        <a-entity template="src: #plane" data-thumb="#p-one" position="0 0 0" rotation="0 0 0"></a-entity>
-        <a-entity template="src: #plane" data-thumb="#p-two" position="4 0 .5" rotation="0 -25 0"></a-entity>
-        <a-entity template="src: #plane" data-thumb="#p-three" position="8 0 4" rotation="0 -65 0"></a-entity>
+      <audio id="audio-david" src="audio/mccallum.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-david" src="bin-img/names/david.png">
+
+      <audio id="audio-sarah" src="audio/nahar.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-sarah" src="bin-img/names/sarah.png">
+
+      <audio id="audio-andy" src="audio/mager.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-andy" src="bin-img/names/andy.png">
+
+      <audio id="audio-blake" src="audio/garland-tirado.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-blake" src="bin-img/names/blake.png">
+
+      <audio id="audio-sophia" src="audio/spowless.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-sophia" src="bin-img/names/sophia.png">
+
+      <audio id="audio-neal" src="audio/npowless.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-neal" src="bin-img/names/neal.png">
+
+      <audio id="audio-cindy" src="audio/squillace.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-cindy" src="bin-img/names/cindy.png">
+
+      <audio id="audio-bob" src="audio/searing.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-bob" src="bin-img/names/robert.png">
+
+      <audio id="audio-danielle" src="audio/smith.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-danielle" src="bin-img/names/danielle.png">
+
+      <audio id="audio-colleen" src="audio/zawadzki.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-colleen" src="bin-img/names/colleen.png">
+
+      <audio id="audio-sandra" src="audio/sbigtree.m4a" preload="auto" crossorigin="anonymous"></audio>
+      <img id="img-sandra" src="bin-img/names/sandra.png">
+
+      <!--sky image-->
+      <img id="circle" src="bin-img/circle.jpg">
+
+    </a-assets>
+    
+    <a-sky id="image-360" src="#circle" radius="50" position="0 0 0" rotation="-4 85 1"></a-sky>
+
+    <!--phil arnold-->
+    <a-plane 
+            position="-10 -3 -38"
+            rotation="0 22 0"
+            shader="flat"
+            transparent="true"
+            src="#img-phil"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-phil;"
+            >
+    </a-plane>
+
+    <!--sue eiholzer-->
+    <a-plane 
+            position="10 -3 -38"
+            rotation="0 338 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-sue"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-sue;"
+            >
+    </a-plane>
+
+    <!--hillary-anne coppola-->
+    <a-plane 
+            position="-27 -3 -32"
+            rotation="0 45 0"
+            shader="flat"
+            transparent="true"
+            src="#img-hillary"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-hillary;"
+            >
+    </a-plane>
+
+    <!--cecelia ilacqua-->
+    <a-plane 
+            position="27 -3 -32"
+            rotation="0 315 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-cecelia"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-cecelia;"
+            >
+    </a-plane>
+
+    <!--david mccallum-->
+    <a-plane 
+            position="-36 -3 -16"
+            rotation="0 67 0"
+            shader="flat"
+            transparent="true"
+            src="#img-david"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-david;"
+            >
+    </a-plane>
+
+    <!--sarah nahar-->
+    <a-plane 
+            position="36 -3 -16"
+            rotation="0 292 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-sarah"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-sarah;"
+            >
+    </a-plane>
+
+    <!--MIDDLE 
+      TWO-->
+
+    <!--andy mager-->
+    <a-plane 
+            position="-39 -3 0"
+            rotation="0 90 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-andy"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-andy;"
+            >
+    </a-plane>
+
+    <!--blake garland-tirado-->
+    <a-plane 
+            position="39 -3 0"
+            rotation="0 270 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-blake"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-blake;"
+            >
+    </a-plane>
+
+    <!--BACK 
+      HALF-->
+
+    <!--robert searing-->
+    <a-plane 
+            position="36 -3 14"
+            rotation="0 247 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-bob"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-bob;"
+            >
+    </a-plane>
+
+    <!--cindy squillace-->
+    <a-plane 
+            position="-36 -3 14"
+            rotation="0 112 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-cindy"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-cindy;"
+            >
+    </a-plane>
+
+    <!--danielle smith-->
+    <a-plane 
+            position="27 -3 26"
+            rotation="0 225 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-danielle"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-danielle;"
+            >
+    </a-plane>
+
+    <!--colleen zawadzki-->
+    <a-plane 
+            position="-27 -3 26"
+            rotation="0 135 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-colleen"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-colleen;"
+            >
+    </a-plane>
+
+    <!--neal powless-->
+    <a-plane 
+            position="-15 -3 36"
+            rotation="0 157 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-neal"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-neal;"
+            >
+    </a-plane>
+
+    <!--sophia powless-->
+    <a-plane 
+            position="15 -3 36"
+            rotation="0 202 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-sophia"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-sophia;"
+            >
+    </a-plane>
+
+    <!--sandra bigtree-->
+    <a-plane 
+            position="0 -3 39"
+            rotation="0 180 0" 
+            shader="flat"
+            transparent="true"
+            src="#img-sandra"
+            width="5"
+            height="5"
+            side="double"
+            sound="src: #audio-sandra;"
+            >
+    </a-plane>
+
+    <a class="home-btn" href="index.html">&#8592;</a>
+    <a class="info-btn" href="#" onclick="showInfo()">i</a>
+    <div id="info-card">
+      <h2>Enable WebVR</h2>
+      <p>The button in the bottom right corner toggles a full-screen VR experience, allowing you to navigate and move using gestures.</p>
+      <h2>Movement</h2>
+      <p>Move around using the <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, and <kbd>D</kbd> keys or with a controller. You can click and drag with the mouse to rotate your view.</p>
+      <h2>Interactions</h2>
+      <p>Interact with objects by looking at them with the reticule (targeting ring), or by tapping or clicking with the mouse.</p>
+      <h2>Audio</h2>
+      <p>Play a clip by interacting with a name. If you're having a hard time hearing someone, move closer.</p>
+      <hr>
+      <p class="credits">Photo by Alex M. Lee</p>
+    </div>
+    <a-camera>
+      <a-entity cursor="fuse: true; fuseTimeout: 2000"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.02"
+                material="color: white; shader: flat">
       </a-entity>
-
-      <a-camera>
-        <a-cursor id="cursor" animation__click="property: scale; from: 1 1 1; to: 1.5 1.5 1.5; easing: easeInCubic; dur: 150; startEvents: click" animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click" animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
-      </a-camera>
-
+    </a-camera>
     </a-scene>
   </body>
 </html>
