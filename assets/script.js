@@ -12,8 +12,12 @@ var soundEls = document.querySelectorAll('[sound]')
         if (!isPlaying)
           el.components.sound.playSound()
       })
-    }
+    };
 
+function showInfo() {
+  let infoCard = document.getElementById('info-card');
+  infoCard.classList.toggle('show');
+}
 // var soundEls = document.querySelectorAll('[sound]');
 
 // for (var i = 0; i < soundEls.length; i++) {

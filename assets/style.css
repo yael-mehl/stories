@@ -542,6 +542,9 @@ footer svg {
   grid-template-columns: 1fr 1fr;
 }
 /*-- WebVR Styles--*/
+h1.page-title {
+  display: none;
+}
 a.info-btn {
   position: absolute;
   top: 1rem;
@@ -560,11 +563,10 @@ a:hover.info-btn {
   color: red;
   border-color: red;
 }
-
 a.home-btn {
   position: absolute;
-  bottom: 1rem;
-  right: 4rem;
+  top: 1rem;
+  left: 1rem;
   z-index: 10000;
   color: var(--black);
   background-color: rgba(255,255,255,1);
@@ -579,7 +581,45 @@ a:hover.home-btn {
   color: red;
   border-color: red;
 }
-
+#info-card {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  z-index: 9000;
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 33vw;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .2s ease;
+  border-radius: 8px;
+}
+#info-card.show {
+  max-height: 33rem;
+  padding: .5rem 1rem;
+  border: 3px solid var(--drk-gray);
+}
+#info-card h2 {
+  font-size: .95rem;
+  margin: 1rem 0 .1rem 0;
+}
+#info-card p {
+  font-size: .8rem;
+  margin: 0 0 .1rem 0;
+}
+#info-card hr {
+  color: #ccc; 
+  border-style: dashed;
+}
+#info-card .credits {
+  font-style: italic;
+  color: var(--gray);
+}
+#info-card kbd {
+  background: #FFF;
+  border: 1px solid var(--black);
+  padding: 0 .2em;
+  border-radius: 4px;
+}
 /*--Media Queries--*/
 @media screen and (max-width: 1080px) {
   .voices-wrap {grid-template-columns: repeat(2, 1fr);grid-gap: 2em;}
