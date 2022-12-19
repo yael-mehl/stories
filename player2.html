@@ -9,55 +9,110 @@
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+    <script src="assets/script.js" defer></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene cursor='rayOrigin: mouse' raycaster='objects: [sound]'>
       <a-assets>
-        <audio id="a-phil" src="assets/audio/a-phil.m4a" preload="auto"></audio>
-        <audio id="a-sandy" src="assets/audio/a-sandy.m4a" preload="auto"></audio>
-        <img id="bob" src="img/names/bob.png">
-        <img id="phil" src="img/names/phil.png">
-        <img id="sandra" src="img/names/sandra.png">
-        <img id="sophia" src="img/names/sophia.png">
-        <img id="sue" src="img/names/sue.png">
+        <!-- <audio id="audio-andy" src="audio/mager.m4a" crossorigin="anonymous"></audio>
+        <img id="img-andy" src="bin-img/names/andy.png">
+        
+        <audio id="audio-blake" src="audio/garland-tirado.m4a" crossorigin="anonymous"></audio>
+        <img id="img-blake" src="bin-img/names/blake.png">
+        
+        <audio id="audio-cecelia" src="audio/ilacqua.m4a" crossorigin="anonymous"></audio>
+        <img id="img-cecelia" src="bin-img/names/cecelia.png">
+        
+        <audio id="audio-cindy" src="audio/squillace.m4a" crossorigin="anonymous"></audio>
+        <img id="img-cindy" src="bin-img/names/cindy.png">
+        
+        <audio id="audio-colleen" src="audio/zawadzki.m4a" crossorigin="anonymous"></audio>
+        <img id="img-colleen" src="bin-img/names/colleen.png">
+        
+        <audio id="audio-danielle" src="audio/smith.m4a" crossorigin="anonymous"></audio>
+        <img id="img-danielle" src="bin-img/names/danielle.png">
+        
+        <audio id="audio-david" src="audio/mccallum.m4a" crossorigin="anonymous"></audio>
+        <img id="img-david" src="bin-img/names/david.png">
+        
+        <audio id="audio-hillary-anne" src="audio/coppola.m4a" crossorigin="anonymous"></audio>
+        <img id="img-hillary-anne" src="bin-img/names/hillary-anne.png">
+        
+        <audio id="audio-neal" src="audio/npowless.m4a" crossorigin="anonymous"></audio>
+        <img id="img-neal" src="bin-img/names/neal.png">
+        
+        <audio id="audio-phil" src="audio/arnold.m4a" crossorigin="anonymous"></audio>
+        <img id="img-phil" src="bin-img/names/phil.png">
+        
+        <audio id="audio-robert" src="audio/searing.m4a" crossorigin="anonymous"></audio>
+        <img id="img-robert" src="bin-img/names/robert.png">
+        
+        <audio id="audio-sandra" src="audio/sbigtree.m4a" crossorigin="anonymous"></audio>
+        <img id="img-sandra" src="bin-img/names/sandra.png">
+        
+        <audio id="audio-sarah" src="audio/nahar.m4a" crossorigin="anonymous"></audio>
+        <img id="img-sarah" src="bin-img/names/sarah.png">
+        
+        <audio id="audio-sophia" src="audio/spowless.m4a" crossorigin="anonymous"></audio>
+        <img id="img-sophia" src="bin-img/names/sophia.png">
+        
+        <audio id="audio-sue" src="audio/eiholzer.m4a" crossorigin="anonymous"></audio>
+        <img id="img-sue" src="bin-img/names/sue.png"> -->
+        
         <!-- <img id="circle" src="img/this-try.jpg"> -->
-        <img id="circle" src="img/edit.png">
 
-        <script id="p-phil" type="text/html">
+        <audio id="audio-phil" src="audio/arnold.m4a" preload="auto" crossorigin="anonymous"></audio>
+        <img id="img-phil" src="bin-img/names/phil.png">
+
+        <img id="circle" src="bin-img/edit.png">
+        
+        <!-- <script id="script-phil" type="text/html">
           <a-entity class="link"
-            geometry="primitive: plane; height: 1.3; width: 4;"
+            geometry="primitive: sphere; 
+                      radius: 5;
+                      "
             material="shader: phong; transparent: true; src: ${thumb}" 
-            sound="on: click; src: #a-phil">
+            sound="on: click; src: #audio-phil">
+          </a-entity>
+        </script> -->
+
+        <!-- <script id="person" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 5; width: 5;"
+            material="shader: phong; transparent: true; src: ${thumb}; side: double;" 
+            sound="on: click; src: ${clip}">
+          </a-entity>
+        </script> -->
+        
+        <script id="person" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 5; width: 5;"
+            material="shader: phong; transparent: true; src: ${thumb}; side: double;" 
+            sound="src: ${clip}; on: click;"
+            >
           </a-entity>
         </script>
-        <script id="p-sandy" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: plane; height: 1.3; width: 4;"
-            material="shader: phong; transparent: true; src: ${thumb}" 
-            sound="on: click; src: #a-sandy">
-          </a-entity>
-        </script>
-        <script id="plane" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: plane; height: 1.3; width: 4;"
-            material="shader: phong; transparent: true; src: ${thumb}" 
-            sound="on: click; src: #a-phil">
-          </a-entity>
-        </script>
+        
       </a-assets>
 
-      <a-sky id="image-360" src="#circle" radius="20" rotation="0 -100 10"></a-sky>
+      <a-sky id="image-360" src="#circle" radius="50" position="0 0 0" rotation="-3 86 9"></a-sky>
 
-      <a-entity id="links" position="0 1.5 -8">
-        <a-entity template="src: #plane" data-thumb="#bob" position="-16 0 4" rotation="0 65 0"></a-entity>
-        <a-entity template="src: #p-phil" data-thumb="#phil" position="-8 0 .5" rotation="0 25 0"></a-entity>
-        <a-entity template="src: #p-sandy" data-thumb="#sandra" position="0 0 0" rotation="0 0 0"></a-entity>
-        <a-entity template="src: #plane" data-thumb="#sophia" position="8 0 .5" rotation="0 -25 0"></a-entity>
-        <a-entity template="src: #plane" data-thumb="#sue" position="16 0 4" rotation="0 -65 0"></a-entity>
-      </a-entity>
+        <a-entity 
+          template="src: #person;" 
+          data-thumb="#img-phil;"
+          data-clip="#audio-phil;"  
+          position="0 -2 -28;" 
+          rotation="0 0 0;"
+          >
+        </a-entity>
+
+      
 
       <a-camera>
-        <a-cursor id="cursor" animation__click="property: scale; from: 1 1 1; to: 1.5 1.5 1.5; easing: easeInCubic; dur: 150; startEvents: click" animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click" animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+        <a-cursor id="cursor" 
+        geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+        material="color: white; shader: flat;"
+        animation__click="property: scale; from: 1 1 1; to: 1.5 1.5 1.5; easing: easeInCubic; dur: 150; startEvents: click" animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click" animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
       </a-camera>
 
     </a-scene>

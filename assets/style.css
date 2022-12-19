@@ -541,6 +541,45 @@ footer svg {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+/*-- WebVR Styles--*/
+a.info-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+  color: var(--black);
+  background-color: rgba(255,255,255,1);
+  border: 2px solid var(--black);
+  border-radius: 100%;
+  padding: .2rem .75rem .12rem .7rem;
+  font-weight: 900;
+  font-family: serif;
+  font-style: italic;
+}
+a:hover.info-btn {
+  color: red;
+  border-color: red;
+}
+
+a.home-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 4rem;
+  z-index: 10000;
+  color: var(--black);
+  background-color: rgba(255,255,255,1);
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  padding: .12rem .5rem;
+  font-size: 90%;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+a:hover.home-btn {
+  color: red;
+  border-color: red;
+}
+
 /*--Media Queries--*/
 @media screen and (max-width: 1080px) {
   .voices-wrap {grid-template-columns: repeat(2, 1fr);grid-gap: 2em;}
