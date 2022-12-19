@@ -124,7 +124,7 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   left: 0;
   background-image: url(../bin-img/montrans.png);
   background-repeat: no-repeat;
-  background-position: 85%;
+  background-position: 85% -30px;
   background-size: contain;
   animation: statue 6s ease 0s infinite alternate forwards;
   z-index: 0;
@@ -595,7 +595,7 @@ a:hover.home-btn {
 }
 #info-card.show {
   max-height: 33rem;
-  padding: .5rem 1rem;
+  padding: .5rem .8rem;
   border: 3px solid var(--drk-gray);
 }
 #info-card h2 {
@@ -626,6 +626,7 @@ a:hover.home-btn {
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
   .store-links {width: 98%; justify-content: space-evenly;}
   .store-link {margin-right: 1rem;}
+  #info-card {max-width: 40vw;}
 }
 @media screen and (max-width: 990px) {
   :root{font-size: 18px;}
@@ -634,6 +635,7 @@ a:hover.home-btn {
   .hist-txt {column-gap: 2em;}
   .resources-wrap {grid-template-columns: repeat(2, 1fr);}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
+  #info-card {max-width: 50vw;}
 }
 @media screen and (max-width: 768px) {
   .voices-wrap {grid-template-columns: 1fr;}
@@ -642,6 +644,7 @@ a:hover.home-btn {
   #pedagogy .picture {order: -1;}
   #history, #resources, #credits {outline-offset: -.2em;}
   .hist-txt, .credits-txt {column-count: 1;}
+  #info-card {max-width: 75vw;}
 }
 @media screen and (max-width: 550px) {
   :root{font-size: 16px;}
@@ -652,4 +655,5 @@ a:hover.home-btn {
   .voices-wrap {grid-template-columns: 1fr;}
   .resources-wrap {grid-template-columns: 1fr;}
   .credits-wrap {grid-template-columns: 1fr;}
+  #info-card {max-width: 85vw;}
 }
