@@ -81,6 +81,8 @@ p {line-height: 1.6;}
 }
 .brand > svg {
   vertical-align: top;
+  width: 30px;
+  height: auto;
 }
 .brand > h1 {
   display: inline-block;
@@ -90,6 +92,8 @@ p {line-height: 1.6;}
 }
 .nav-items {
   padding-top: 9px;
+  display: flex;
+  justify-content: space-around;
 }
 .nav-items > a:not(:first-child) {
   margin-left: 1.5vw;
@@ -656,4 +660,7 @@ a:hover.home-btn {
   .resources-wrap {grid-template-columns: 1fr;}
   .credits-wrap {grid-template-columns: 1fr;}
   #info-card {max-width: 85vw;}
+  .nav-items {font-size: 95%;}
+  .voice-card h4:after {font-size:1.4em;}
+  .brand > svg {width: 25px;height: auto;}
 }
