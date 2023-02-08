@@ -110,7 +110,7 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   position: relative;
   z-index: 9999;
 }
-#splash-bottom {
+/* #splash-bottom {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -120,7 +120,7 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   background-position: 88% -30px;
   background-size: contain;
   animation: tree 6s ease 0s infinite alternate backwards;
-}
+} */
 #splash-top {
   height: 100%;
   width: 100%;
@@ -130,17 +130,17 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   background-repeat: no-repeat;
   background-position: 85% -30px;
   background-size: contain;
-  animation: statue 6s ease 0s infinite alternate forwards;
   z-index: 0;
+  /* animation: statue 6s ease 0s infinite alternate forwards; */
 }
-@keyframes tree {
+/* @keyframes tree {
   0% {opacity: 0;}
   100% {opacity: 1;}
 }
 @keyframes statue {
   0% {opacity: 1;}
   100% {opacity: 0;}
-}
+} */
 .spl-wrap {
   display: flex;
   flex-direction: column;
