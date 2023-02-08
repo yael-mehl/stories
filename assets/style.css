@@ -128,7 +128,7 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   left: 0;
   background-image: url(../bin-img/montrans.png);
   background-repeat: no-repeat;
-  background-position: 85% -30px;
+  background-position: 85% 0;
   background-size: contain;
   z-index: 0;
   /* animation: statue 6s ease 0s infinite alternate forwards; */
