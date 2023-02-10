@@ -170,6 +170,9 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+    /*-- --*/
+    display: none;
+    /*-- --*/
 }
 .store-link img {
   opacity: 1;
@@ -179,7 +182,7 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   opacity: .7;
 }
 .store-link.disabled img {
-  opacity: .5;
+  opacity: .2;
   cursor: not-allowed;
 }
 .store-link.disabled img:hover {
