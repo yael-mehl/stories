@@ -406,8 +406,9 @@ h4.opened:after {
   color: var(--prime);
 }
 #participate a {
-  margin-top: 40px;
+  display: block;
   padding: 0.8rem 1rem;
+  margin-top: 40px;
 }
 /*--Footer--*/
 footer {
@@ -435,6 +436,7 @@ footer svg {
 #contact .btn-fill {
   position: relative;
   font-size: 1rem;
+  font-family: inherit;
 }
 #contact .btn-fill > svg {
   top: 0px;
