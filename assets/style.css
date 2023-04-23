@@ -91,12 +91,11 @@ p {line-height: 1.6;}
   left: 8px;
 }
 .nav-items {
-  padding-top: 9px;
+  column-gap: 12px;
   display: flex;
-  justify-content: space-around;
-}
-.nav-items > a:not(:first-child) {
-  margin-left: 1.5vw;
+  flex-wrap: wrap;
+  padding: 10px 10px 0;
+  row-gap: 6px;
 }
 a.nav-link:link, a.foot-link:link {color: var(--lt-prime);}
 a.nav-link:visited, a.foot-link:visited {color: var(--lt-prime);}
