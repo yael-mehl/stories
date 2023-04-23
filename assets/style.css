@@ -116,7 +116,7 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   left: 0;
   background-image: url(../bin-img/victoria-ranson-transparent.png);
   background-repeat: no-repeat;
-  background-position: 90% 120px;
+  background-position: 90% 160px;
   background-size: 400px;
   animation: painting 6s ease 0s infinite alternate backwards;
 }
@@ -644,7 +644,7 @@ a:hover.home-btn {
 }
 /*--Media Queries--*/
 @media screen and (max-width: 1080px) {
-  #splash-bottom {background-position: 90% 100px;background-size: 320px;}
+  #splash-bottom {background-position: 90% 160px;background-size: 380px;}
   .voices-wrap {grid-template-columns: repeat(2, 1fr);grid-gap: 2em;}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
   .store-links {width: 98%; justify-content: space-evenly;{margin: 2rem auto;}
@@ -656,14 +656,15 @@ a:hover.home-btn {
   .nav-wrap{flex-direction:column;align-items: center;}
   section:not(#splash) {padding: 2rem 3vw;}
   .spl-wrap {width: 49vw;margin-left: 8%;}
-  #splash-bottom {background-position: 93% 130px;background-size: 280px;}
+  #splash-bottom {background-position: 93% 180px;background-size: 280px;}
   .hist-txt {column-gap: 2em;}
   .resources-wrap {grid-template-columns: repeat(2, 1fr);}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
   #info-card {max-width: 50vw;}
 }
 @media screen and (max-width: 768px) {
-  #splash-bottom {background-position: 93% 140px;background-size: 250px;}
+  .spl-wrap {width: 44vw;margin-left: 8%;}
+  #splash-bottom {background-position: 93% 160px;background-size: 280px;}
   .voices-wrap {grid-template-columns: 1fr;}
   .credits-wrap {grid-template-columns: 1fr;}
   .pedagogy-wrap {grid-template-columns: 1fr; grid-gap: 2rem;}
@@ -676,7 +677,6 @@ a:hover.home-btn {
   :root{font-size: 16px;}
   section:not(#splash) {padding: 1rem 2vw; outline: none;}
   #splash{background-position: 96%;}
-/*   #splash-bottom {background-position: 93% 140px;background-size: 250px;} */
   .spl-wrap {margin-left: 0%; width: 100%; background-color: rgba(255,255,255,0.8);}
   .spl-txt{font-size:115%;}
   .voices-wrap {grid-template-columns: 1fr;}
