@@ -170,9 +170,6 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-    /*-- --*/
-    display: none;
-    /*-- --*/
 }
 .store-link img {
   opacity: 1;
