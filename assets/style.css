@@ -109,17 +109,25 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   position: relative;
   z-index: 9999;
 }
-/* #splash-bottom {
+#splash-bottom {
   height: 100%;
   width: 100%;
   position: absolute;
   left: 0;
-  background-image: url(../bin-img/otop.png);
+  background-image: url(../bin-img/victoria-ranson-transparent.png);
   background-repeat: no-repeat;
-  background-position: 88% -30px;
-  background-size: contain;
-  animation: tree 6s ease 0s infinite alternate backwards;
-} */
+  background-position: 90% 70px;
+  background-size: 320px;
+  animation: painting 6s ease 0s infinite alternate backwards;
+}
+.image-credit {
+  background-color: white;
+  bottom: 12px;
+  font-size: 16px;
+  padding: 0 5px;
+  position: absolute;
+  right: 30px;
+}
 #splash-top {
   height: 100%;
   width: 100%;
@@ -130,16 +138,16 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   background-position: 85% 0;
   background-size: contain;
   z-index: 0;
-  /* animation: statue 6s ease 0s infinite alternate forwards; */
+  animation: statue 6s ease 0s infinite alternate forwards;
 }
-/* @keyframes tree {
+@keyframes painting {
   0% {opacity: 0;}
   100% {opacity: 1;}
 }
 @keyframes statue {
   0% {opacity: 1;}
   100% {opacity: 0;}
-} */
+}
 .spl-wrap {
   display: flex;
   flex-direction: column;
@@ -636,9 +644,10 @@ a:hover.home-btn {
 }
 /*--Media Queries--*/
 @media screen and (max-width: 1080px) {
+  #splash-bottom {background-position: 90% 50px;background-size: 220px;}
   .voices-wrap {grid-template-columns: repeat(2, 1fr);grid-gap: 2em;}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
-  .store-links {width: 98%; justify-content: space-evenly;}
+  .store-links {width: 98%; justify-content: space-evenly;{margin: 2rem auto;}
   .store-link {margin-right: 1rem;}
   #info-card {max-width: 40vw;}
 }
@@ -646,6 +655,7 @@ a:hover.home-btn {
   :root{font-size: 18px;}
   .nav-wrap{flex-direction:column;align-items: center;}
   section:not(#splash) {padding: 2rem 3vw;}
+  .spl-wrap {width: 49vw;margin-left: 8%;}
   .hist-txt {column-gap: 2em;}
   .resources-wrap {grid-template-columns: repeat(2, 1fr);}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
