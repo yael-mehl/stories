@@ -91,12 +91,11 @@ p {line-height: 1.6;}
   left: 8px;
 }
 .nav-items {
-  padding-top: 9px;
+  column-gap: 12px;
   display: flex;
-  justify-content: space-around;
-}
-.nav-items > a:not(:first-child) {
-  margin-left: 1.5vw;
+  flex-wrap: wrap;
+  padding: 10px 10px 0;
+  row-gap: 6px;
 }
 a.nav-link:link, a.foot-link:link {color: var(--lt-prime);}
 a.nav-link:visited, a.foot-link:visited {color: var(--lt-prime);}
@@ -110,17 +109,25 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   position: relative;
   z-index: 9999;
 }
-/* #splash-bottom {
+#splash-bottom {
   height: 100%;
   width: 100%;
   position: absolute;
   left: 0;
-  background-image: url(../bin-img/otop.png);
+  background-image: url(../bin-img/victoria-ranson-transparent.png);
   background-repeat: no-repeat;
-  background-position: 88% -30px;
-  background-size: contain;
-  animation: tree 6s ease 0s infinite alternate backwards;
-} */
+  background-position: 90% 35%;
+  background-size: 400px;
+  animation: painting 6s ease 0s infinite alternate backwards;
+}
+.image-credit {
+  background-color: white;
+  bottom: 12px;
+  font-size: 16px;
+  padding: 0 5px;
+  position: absolute;
+  right: 30px;
+}
 #splash-top {
   height: 100%;
   width: 100%;
@@ -131,16 +138,16 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   background-position: 85% 0;
   background-size: contain;
   z-index: 0;
-  /* animation: statue 6s ease 0s infinite alternate forwards; */
+  animation: statue 6s ease 0s infinite alternate forwards;
 }
-/* @keyframes tree {
+@keyframes painting {
   0% {opacity: 0;}
   100% {opacity: 1;}
 }
 @keyframes statue {
   0% {opacity: 1;}
   100% {opacity: 0;}
-} */
+}
 .spl-wrap {
   display: flex;
   flex-direction: column;
@@ -170,9 +177,6 @@ a.nav-link:active, a.foot-link:active {color: var(--white);}
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-    /*-- --*/
-    display: none;
-    /*-- --*/
 }
 .store-link img {
   opacity: 1;
@@ -394,6 +398,18 @@ h4.opened:after {
 #contact > p {
   margin-bottom: 2rem;
 }
+/* Participate Section */
+#participate {
+  background-color: var(--lt-prime);
+}
+#participate h2 {
+  color: var(--prime);
+}
+#participate a {
+  display: block;
+  padding: 0.8rem 1rem;
+  margin-top: 40px;
+}
 /*--Footer--*/
 footer {
   background-color: var(--prime);
@@ -420,6 +436,7 @@ footer svg {
 #contact .btn-fill {
   position: relative;
   font-size: 1rem;
+  font-family: inherit;
 }
 #contact .btn-fill > svg {
   top: 0px;
@@ -629,9 +646,10 @@ a:hover.home-btn {
 }
 /*--Media Queries--*/
 @media screen and (max-width: 1080px) {
+  #splash-bottom {background-position: 90% 38%;background-size: 380px;}
   .voices-wrap {grid-template-columns: repeat(2, 1fr);grid-gap: 2em;}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
-  .store-links {width: 98%; justify-content: space-evenly;}
+  .store-links {width: 98%; justify-content: space-evenly;margin: 2rem auto;}
   .store-link {margin-right: 1rem;}
   #info-card {max-width: 40vw;}
 }
@@ -639,12 +657,15 @@ a:hover.home-btn {
   :root{font-size: 18px;}
   .nav-wrap{flex-direction:column;align-items: center;}
   section:not(#splash) {padding: 2rem 3vw;}
+  .spl-wrap {width: 49vw;margin-left: 8%;}
+  #splash-bottom {background-position: 93% 40%;background-size: 280px;}
   .hist-txt {column-gap: 2em;}
   .resources-wrap {grid-template-columns: repeat(2, 1fr);}
   .credits-wrap {grid-template-columns: repeat(2, 1fr);}
   #info-card {max-width: 50vw;}
 }
 @media screen and (max-width: 768px) {
+  .spl-wrap {width: 44vw;margin-left: 8%;}
   .voices-wrap {grid-template-columns: 1fr;}
   .credits-wrap {grid-template-columns: 1fr;}
   .pedagogy-wrap {grid-template-columns: 1fr; grid-gap: 2rem;}
